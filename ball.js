@@ -38,10 +38,10 @@ export class Ball {
     }
 
     bounceWindow(block) {
-        const minX = blcok.x - this.radius;
-        const maxX = blcok.maxX + this.radius;
-        const minY = blcok.y - this.radius;
-        const maxY = blcok.maxY + this.radius;
+        const minX = block.x - this.radius;
+        const maxX = block.maxX + this.radius;
+        const minY = block.y - this.radius;
+        const maxY = block.maxY + this.radius;
 
         if(this.x > minX && this.x < maxX && this.y > minY && this.y < maxY) {
             const x1 = Math.abs(minX - this.x); 
