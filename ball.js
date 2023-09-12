@@ -9,13 +9,15 @@ export class Ball {
         this.y = diameter + (Math.random() * stageHeight - diameter);
     }
 
-    draw(ctx, stageWidth, stageHeight) {
+    draw(ctx, stageWidth, stageHeight, block) {
         this.x += this.vx;
         this.y += this.vy;
 
         this.bounceWindow(stageWidth, stageHeight);
+
+        this.bounceBlock(block);
         
-        this.bounceWindow(block);
+        this.bounceWindow(stageWidth, stageHeight);
         ctx.fillStyle = '#fdd700';
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
@@ -37,7 +39,7 @@ export class Ball {
         }
     }
 
-    bounceWindow(block) {
+    bounceBlock(block) {
         const minX = block.x - this.radius;
         const maxX = block.maxX + this.radius;
         const minY = block.y - this.radius;
