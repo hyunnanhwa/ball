@@ -8,7 +8,7 @@ export class Block {
         this.maxY = height + y; 
     }
 
-    drwa(ctx) {
+    draw(ctx) {
         const xGap = 80;
         const yGap = 60
         
